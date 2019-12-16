@@ -1,5 +1,5 @@
 class DestinationsController < ApplicationController
-  before_action :set_destination, only: [:show, :update, :destroy]
+  before_action :set_destination, only: [:show]
 
   # GET /destinations
   def index
@@ -14,29 +14,29 @@ class DestinationsController < ApplicationController
   end
 
   # POST /destinations
-  def create
-    @destination = Destination.new(destination_params)
+  # def create
+  #   @destination = Destination.new(destination_params)
 
-    if @destination.save
-      render json: @destination, status: :created, location: @destination
-    else
-      render json: @destination.errors, status: :unprocessable_entity
-    end
-  end
+  #   if @destination.save
+  #     render json: @destination, status: :created, location: @destination
+  #   else
+  #     render json: @destination.errors, status: :unprocessable_entity
+  #   end
+  # end
 
-  # PATCH/PUT /destinations/1
-  def update
-    if @destination.update(destination_params)
-      render json: @destination
-    else
-      render json: @destination.errors, status: :unprocessable_entity
-    end
-  end
+  # # PATCH/PUT /destinations/1
+  # def update
+  #   if @destination.update(destination_params)
+  #     render json: @destination
+  #   else
+  #     render json: @destination.errors, status: :unprocessable_entity
+  #   end
+  # end
 
-  # DELETE /destinations/1
-  def destroy
-    @destination.destroy
-  end
+  # # DELETE /destinations/1
+  # def destroy
+  #   @destination.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

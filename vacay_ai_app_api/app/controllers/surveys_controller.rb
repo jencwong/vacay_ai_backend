@@ -1,5 +1,5 @@
 class SurveysController < ApplicationController
-  before_action :set_survey, only: [:show, :update, :destroy]
+  before_action :set_survey, only: [:show]
 
   # GET /surveys
   def index
@@ -13,30 +13,30 @@ class SurveysController < ApplicationController
     render json: @survey
   end
 
-  # POST /surveys
-  def create
-    @survey = Survey.new(survey_params)
+  # # POST /surveys
+  # def create
+  #   @survey = Survey.new(survey_params)
 
-    if @survey.save
-      render json: @survey, status: :created, location: @survey
-    else
-      render json: @survey.errors, status: :unprocessable_entity
-    end
-  end
+  #   if @survey.save
+  #     render json: @survey, status: :created, location: @survey
+  #   else
+  #     render json: @survey.errors, status: :unprocessable_entity
+  #   end
+  # end
 
-  # PATCH/PUT /surveys/1
-  def update
-    if @survey.update(survey_params)
-      render json: @survey
-    else
-      render json: @survey.errors, status: :unprocessable_entity
-    end
-  end
+  # # PATCH/PUT /surveys/1
+  # def update
+  #   if @survey.update(survey_params)
+  #     render json: @survey
+  #   else
+  #     render json: @survey.errors, status: :unprocessable_entity
+  #   end
+  # end
 
-  # DELETE /surveys/1
-  def destroy
-    @survey.destroy
-  end
+  # # DELETE /surveys/1
+  # def destroy
+  #   @survey.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -44,8 +44,8 @@ class SurveysController < ApplicationController
       @survey = Survey.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
-    def survey_params
-      params.require(:survey).permit(:question, :option_1, :option_2, :option_3)
-    end
+    # # Only allow a trusted parameter "white list" through.
+    # def survey_params
+    #   params.require(:survey).permit(:question, :option_1, :option_2, :option_3)
+    # end
 end
