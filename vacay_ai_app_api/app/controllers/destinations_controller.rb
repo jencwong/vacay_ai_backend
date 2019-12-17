@@ -1,5 +1,6 @@
 class DestinationsController < ApplicationController
   before_action :set_destination, only: [:show]
+  before_action :get_matches, only: [:match]
 
   # GET /destinations
   def index
@@ -11,6 +12,11 @@ class DestinationsController < ApplicationController
   # GET /destinations/1
   def show
     render json: @destination
+  end
+
+   # GET /destinations/match/abc
+   def match
+    render json: @matches
   end
 
   # POST /destinations
@@ -42,6 +48,10 @@ class DestinationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_destination
       @destination = Destination.find(params[:id])
+    end
+
+    def get_matches
+      @matches = Destination.where("ans_combination = ?", params[:combination])
     end
 
     # Only allow a trusted parameter "white list" through.
