@@ -6,17 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# 10.times do
-#     User.create(
-#         firstname: Faker::Name.first_name,
-#         lastname: Faker::Name.last_name,
-#         username: Faker::Internet.username(specifier: 5..8),
-#         email: Faker::Internet.free_email,
-#         password: Faker::Internet.password
-#     )
-#   end
+10.times do
+    User.create(
+        firstname: Faker::Name.first_name,
+        lastname: Faker::Name.last_name,
+        username: Faker::Internet.username(specifier: 5..8),
+        email: Faker::Internet.free_email,
+        password: Faker::Internet.password
+    )
+  end
 
-#   p "Seeded User"
+  p "Seeded User"
 
 Destination.destroy_all
 
@@ -55,12 +55,12 @@ Destination.create([
 {  name: "Finger Lakes", state: "New York", attractions: ["Watkin Glen State Park", "The Strong National Museum of Play"], activities: [""], ans_combination: "acb", image:"https://media-cdn.tripadvisor.com/media/photo-s/13/7d/11/6e/another-frame-worthy.jpg"},
 {  name: "Killington", state: "Vermont", attractions: ["Killington Resort", "Gifford Woods State Park"], activities: [""], ans_combination: "acc", image:"https://media-cdn.tripadvisor.com/media/photo-s/05/19/76/6a/killington-mountain.jpg"},
 {  name: "Camelback Mountain", state: "Pennsylvania", attractions: ["Camelbeach Mountain Waterpark", "The Crossings Premium Outlets"], activities: [""], ans_combination: "acc", image:"https://media-cdn.tripadvisor.com/media/photo-s/01/8c/1e/16/camelbeach.jpg"},
-{  name: "Bretton Woods", state: "New Hampshire", attractions: ["The Mount Washington Cog Railway", "Mount Washington Observatory"], activities: [""], ans_combination: "acc", image:"https://www.tripadvisor.com/Attraction_Review-g46031-d116318-Reviews-The_Mount_Washington_Cog_Railway-Bretton_Woods_New_Hampshire.html"},
-{  name: "Chicago", state: "Illinois", attractions: ["The Art Institute of Chicago", "360 Chicago Observation Deck", "Millennium Park", "Lake Shore"], activities: [""], ans_combination: "baa", image:"https://www.tripadvisor.com/Attraction_Review-g35805-d110078-Reviews-360_Chicago_Observation_Deck-Chicago_Illinois.html"},
+{  name: "Bretton Woods", state: "New Hampshire", attractions: ["The Mount Washington Cog Railway", "Mount Washington Observatory"], activities: [""], ans_combination: "acc", image:"https://www.tripsavvy.com/thmb/-5I1u-WCjzxA5OHpjE05WqxvuCU=/2048x1535/filters:fill(auto,1)/brettonwoods-5a3969315b6e240037463835.jpg"},
+{  name: "Chicago", state: "Illinois", attractions: ["The Art Institute of Chicago", "360 Chicago Observation Deck", "Millennium Park", "Lake Shore"], activities: [""], ans_combination: "baa", image:"https://media-cdn.tripadvisor.com/media/attractions-splice-spp-540x360/07/36/04/4b.jpg"},
 {  name: "Nashville", state: "Tennessee", attractions: ["Honky Tonk Row", "Grand Ole Oprey", "Ryman Auditorium"], activities: [""], ans_combination: "baa", image:"https://media-cdn.tripadvisor.com/media/photo-s/17/2b/4a/5c/photo3jpg.jpg"},
 {  name: "Branson", state: "Michigan", attractions: ["Silver Dollar City", "Titanic Museum", "Sight & Sound Theatres"], activities: [""], ans_combination: "bab", image:"https://media-cdn.tripadvisor.com/media/photo-s/0c/51/ae/c4/silver-dollar-city.jpg"},
 {  name: "Dubuque", state: "Iowa", attractions: ["National Mississippi River Museum & Aquarium", "Fenelon Place Elevator Co"], activities: [""], ans_combination: "bab", image:"https://media-cdn.tripadvisor.com/media/photo-s/0d/f6/d4/a2/fenelon-place-elevator.jpg"},
-{  name: "Clear Lake", state: "Iowa", attractions: ["Clear Lake State Park", "Surf Ballroom"], activities: [""], ans_combination: "bab", image:"https://www.tripadvisor.com/Attraction_Review-g37765-d266176-Reviews-Surf_Ballroom-Clear_Lake_Iowa.html"},
+{  name: "Clear Lake", state: "Iowa", attractions: ["Clear Lake State Park", "Surf Ballroom"], activities: [""], ans_combination: "bab", image:"https://travelwithsara.com/wp-content/uploads/2016/06/rsz_1clear_lake_city_beach.jpg"},
 {  name: "Austin", state: "Texas", attractions: ["Lady Bird Lake Hike and Bike Trail", "Texas State Capitol", "The Oasis on Lake Travis"], activities: [""], ans_combination: "bac", image:"https://media-cdn.tripadvisor.com/media/photo-s/05/dc/2f/93/skyline-from-auditorium.jpg"},
 {  name: "Bloomington", state: "Minnesota", attractions: ["Mall of America", "Nickelodeon Universe"], activities: [""], ans_combination: "bac", image:"https://media-cdn.tripadvisor.com/media/photo-s/18/02/c7/8c/amusement-park-in-the.jpg"},
 {  name: "Kansas City", state: "Missouri", attractions: ["National WWI Museum and Memorial", "The Nelson-Atkins Museum of Art", "Q39 Midtown"], activities: [""], ans_combination: "bac", image:"https://media-cdn.tripadvisor.com/media/photo-s/13/97/18/02/the-national-wwi-museum.jpg"},
@@ -76,7 +76,7 @@ Destination.create([
 {  name: "Logan", state: "Ohio", attractions: ["Old Man's Cave", "Rock House"], activities: [""], ans_combination: "bca", image:"https://media-cdn.tripadvisor.com/media/photo-s/10/27/23/14/water-falls-along-the.jpg"},
 {  name: "Hocking Hills", state: "Ohio", attractions: ["Clear Creek Metro Park", "Hocking House", "Old Man Cave"], activities: [""], ans_combination: "bca", image:"https://innatcedarfalls.com/wp-content/uploads/2015/08/hocking-hills-old-mans-cave-1500x609.jpg"},
 {  name: "Grand Rapids", state: "Michigan", attractions: ["Frederik Meijer Gardens & Sculpture Park", "Gerald R. Ford Museum"], activities: [""], ans_combination: "bcb", image:"https://media-cdn.tripadvisor.com/media/photo-s/01/b0/91/a5/dale-chihuly-3.jpg"},
-{  name: "Grafford", state: "Texas", attractions: ["Possum Kingdom Lake", "Cliffs at Possum Kingdom"], activities: [""], ans_combination: "bcb", image:"https://www.tripadvisor.com/Attraction_Review-g55919-d209597-Reviews-Possum_Kingdom_Lake-Graford_Texas.html"},
+{  name: "Graford", state: "Texas", attractions: ["Possum Kingdom Lake", "Cliffs at Possum Kingdom"], activities: [""], ans_combination: "bcb", image:"https://media-cdn.tripadvisor.com/media/photo-s/11/9b/af/e7/exterior.jpg"},
 {  name: "Turkey Run State", state: "Indiana", attractions: ["Hiking trails", "Canoeing", "Fishing"], activities: [""], ans_combination: "bcb", image:"https://www.turkeyrunstatepark.com/images/sugar_creek3.jpg"},
 {  name: "Bayfield", state: "Wisconsin", attractions: ["Apostle Islands National Lakeshore", "Ice Caves", "Meyers Beach Sea Cave"], activities: [""], ans_combination: "bcc", image:"https://media-cdn.tripadvisor.com/media/photo-s/18/92/38/2d/on-our-lighthouse-and.jpg"},
 {  name: "Mason", state: "Ohio", attractions: ["Kings Island", "Great Wolf Lodge"], activities: [""], ans_combination: "bcc", image:"https://media-cdn.tripadvisor.com/media/photo-s/0c/7a/b2/1e/photo0jpg.jpg"},
@@ -97,7 +97,7 @@ Destination.create([
 {  name: "Carlsbad", state: "Califonia", attractions: ["Legoland", "South Carlsbad State Beach", "Carsbad Village"], activities: [""], ans_combination: "cbc", image:"https://www.carlsbadfoodtours.com/wp-content/uploads/2016/10/shopify-1200-carlsbad-sign_1024x1024-2.v1-1200x800.jpg"},
 {  name: "Yosemite National Park", state: "Califonia", attractions: ["Yosemite Valley", "Glacier Point", "Half Dome"], activities: [""], ans_combination: "cca", image:"https://www.planetware.com/photos-large/USCA/california-yosemite-things-to-do-yosemite-falls.jpg"},
 {  name: "Anchorage", state: "Arkansas", attractions: ["Alaska Wildlife Conservation Center", "Alaska Railroad", "Tony Knowles Coastal Trail"], activities: [""], ans_combination: "cca", image:"https://secureservercdn.net/198.71.233.204/1a3.0d7.myftpupload.com/wp-content/uploads/2015/01/things-to-do-in-anchorage.jpg"},
-{  name: "Lake Tahoe", state: "Nevada", attractions: ["Lake Tahoe Nevada State Park", "Diamond Peak Ski Resort"], activities: [""], ans_combination: "cca", image:"https://secureservercdn.net/198.71.233.204/1a3.0d7.myftpupload.com/wp-content/uploads/2015/01/things-to-do-in-anchorage.jpg"},
+{  name: "Lake Tahoe", state: "Nevada", attractions: ["Lake Tahoe Nevada State Park", "Diamond Peak Ski Resort"], activities: [""], ans_combination: "ccb", image:"https://img.sunset02.com/sites/default/files/image/2016/09/main/tahoe-rocks.jpg"},
 {  name: "Kauai", state: "Hawaii", attractions: ["Wailua Falls", "Kalalau Trail", "Poipu Beach Park"], activities: [""], ans_combination: "ccb", image:"https://www.neverendingvoyage.com/wp-content/uploads/2019/03/what-do-kauai-7.jpg"},
 {  name: "Carlsbad Caverns", state: "New Mexico", attractions: ["Carlsbad Caverns National Park Visitor Center", "Bat Flight Program in Carlsbad Cavern National Park", "Big Room"], activities: [""], ans_combination: "ccb", image:"https://www.national-park.com/wp-content/uploads/2016/04/Welcome-to-Carlsbad-Caverns-National-Park.jpg"},
 {  name: "Denver", state: "Colorado", attractions: ["Denver Botanic Gardens", "Denver Union Station", "Mount Evans"], activities: [""], ans_combination: "ccc", image:"https://www.langan.com/wp-content/uploads/2017/08/Denver.jpg"},
