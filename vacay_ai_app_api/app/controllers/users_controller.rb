@@ -10,8 +10,25 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render json: @user
+    render json: @user.to_json()
   end
+
+  #POST /users/login
+  def login
+    @user = User.where(username: login_params[:username]);
+    if @user[0]
+      if(@user[0][:password] === login_params[:password])
+        render json: {user: @user, code: 200}, status: :ok
+      else
+        render json: {code: 204}
+      end
+    else
+      render json: {code: 204}
+    end
+
+  end
+
+
 
   # POST /users
   def create
@@ -35,10 +52,10 @@ class UsersController < ApplicationController
       @matchedDestinations = @destinations.select { |destination| destination.ans_combination == user_params[:ans_combination]}
 
       @matchedDestinations.each { |destination|
-          Match.create(
-            user_id: @user.id,
-            destination_id: destination.id
-          )
+          # Match.create(
+          #   user_id: @user.id,
+          #   destination_id: destination.id
+          # )
       }
 
       render json: @user.to_json(include: :destinations)
@@ -62,4 +79,11 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:firstname, :lastname, :username, :email, :password, :ans_combination)
     end
+    
+    # for user authentication
+    def login_params
+      params.require(:user).permit(:username, :password)
+    end
+
+
 end

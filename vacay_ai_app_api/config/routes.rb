@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   get 'checkmatch/:combination', :to => 'destinations#match', only: [:match]
+  post 'users/login', :to => 'users#login', only: [:login]
+
+  get 'profile/:user_id', :to => 'matches#user', only: [:user]
   
   resources :matches
   resources :surveys, only: [:index, :show]

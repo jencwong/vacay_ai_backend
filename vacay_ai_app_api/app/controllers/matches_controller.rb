@@ -1,5 +1,6 @@
 class MatchesController < ApplicationController
   before_action :set_match, only: [:show, :update, :destroy]
+  before_action :get_matches, only: [:user]
 
   # GET /matches
   def index
@@ -13,8 +14,26 @@ class MatchesController < ApplicationController
     render json: @match
   end
 
+   # GET /matches/1
+   def user
+    @destinations = Destination.all
+
+    @usersDestinations = []
+
+    @destinations.each { |destination|
+      @matches.each { |match|
+      if(destination.id === match.destination_id)
+        @usersDestinations.push(destination)
+      end
+      }
+    }
+
+    render json: @usersDestinations
+  end
+
   # POST /matches
   def create
+    p match_params
     @match = Match.new(match_params)
 
     if @match.save
@@ -42,6 +61,10 @@ class MatchesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_match
       @match = Match.find(params[:id])
+    end
+
+    def get_matches
+      @matches = Match.where("user_id = ?", params[:user_id])
     end
 
     # Only allow a trusted parameter "white list" through.
