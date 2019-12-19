@@ -23,7 +23,7 @@ class MatchesController < ApplicationController
     @destinations.each { |destination|
       @matches.each { |match|
       if(destination.id === match.destination_id)
-        @usersDestinations.push(destination)
+        @usersDestinations .push({"destination" => destination, "matchid" => match.id})
       end
       }
     }
